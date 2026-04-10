@@ -1,4 +1,4 @@
-# Chiropractic-dbt
+# chiropractic-dbt
  
 A dbt transformation layer built on top of a synthetic chiropractic clinic dataset, converting raw operational data into clean, tested, analysis-ready models for clinical and billing analytics.
  
