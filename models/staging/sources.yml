@@ -1,0 +1,11 @@
+version: 2
+
+sources:
+  - name: public
+    # database: healthcare_records
+    schema: public
+    tables:
+      - name: patients
+      - name: providers
+      - name: appointments
+      - name: billing

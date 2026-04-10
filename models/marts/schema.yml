@@ -1,0 +1,36 @@
+version: 2
+
+models:
+  - name: dim_patients
+    description: "Patient dimension table with age buckets and demographics"
+    columns:
+      - name: patient_id
+        description: "Primary key"
+        tests:
+          - unique
+          - not_null
+      - name: age_bucket
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['Under 18', '18-34', '35-49', '50-64', '65+']
+
+  - name: fct_appointments
+    description: "Appointment facts aggregated by date, provider, and service type with no-show rates"
+    columns:
+      - name: total_appointments
+        tests:
+          - not_null
+      - name: no_show_rate_pct
+        tests:
+          - not_null
+
+  - name: fct_billing
+    description: "Billing facts aggregated by insurance type, service type, and payment date"
+    columns:
+      - name: total_claims
+        tests:
+          - not_null
+      - name: collection_rate_pct
+        tests:
+          - not_null
